@@ -28,8 +28,8 @@
   a   = add
   aa  = add -A
 
-  cm  = commit
-  cma = commit --amend
+  c  = commit
+  ca = commit --amend
 
   s   = status
   d   = diff
