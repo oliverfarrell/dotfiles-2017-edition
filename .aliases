@@ -11,7 +11,7 @@ alias publickey="more ~/.ssh/id_rsa.pub | pbcopy | printf 'Public key copied to 
 alias g="git"
 alias gs="git status"
 alias gd="git diff"
-alias gaa="git add -A"
+alias ga="git add -A"
 alias gcm="git commit"
 alias gca="git commit --amend"
 
