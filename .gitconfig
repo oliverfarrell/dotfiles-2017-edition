@@ -28,9 +28,8 @@
   a   = add
   aa  = add -A
 
-  c   = commit
-  cm  = commit -m
-  ca  = commit --amend
+  cm  = commit
+  cma = commit --amend
 
   s   = status
   d   = diff
@@ -52,8 +51,7 @@
   default = current
 
 [commit]
-  template = ~/.git-commit-template
-  gpgsign = true
+  template = /Users/oliverfarrell/.git-commit-template
 
 [help]
   autocorrect = 1
