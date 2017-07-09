@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+
+# ip addresses
+alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
+alias localip="ipconfig getifaddr en0"
+
+# ssh keys
+alias publickey="more ~/.ssh/id_rsa.pub | pbcopy | printf 'Public key copied to pasteboard.\n'"
+
+# git
+alias g="git"
+alias gs="git status"
+alias gd="git diff"
+alias gaa="git add -A"
+alias gcm="git commit -m"
+alias gca="git commit --amend"
+
+# utils
+alias reload=". ~/.zshrc"
+
+# recursively delete `.DS_Store` files
+alias cleanup="find . -type f -name '*.DS_Store' -ls -delete"
+
+# Show/hide hidden files in Finder
+alias show="defaults write com.apple.finder AppleShowAllFiles -bool true && killall Finder"
+alias hide="defaults write com.apple.finder AppleShowAllFiles -bool false && killall Finder"
