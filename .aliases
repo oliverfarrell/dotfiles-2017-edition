@@ -12,7 +12,7 @@ alias g="git"
 alias gs="git status"
 alias gd="git diff"
 alias ga="git add -A"
-alias gcm="git commit"
+alias gc="git commit"
 alias gca="git commit --amend"
 
 # utils
@@ -24,6 +24,3 @@ alias cleanup="find . -type f -name '*.DS_Store' -ls -delete"
 # Show/hide hidden files in Finder
 alias show="defaults write com.apple.finder AppleShowAllFiles -bool true && killall Finder"
 alias hide="defaults write com.apple.finder AppleShowAllFiles -bool false && killall Finder"
-
-
-eqwqw
