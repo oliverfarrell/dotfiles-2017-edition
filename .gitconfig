@@ -102,7 +102,7 @@
 
   # Publish the current branch by pushing it to the remote "origin",
   # and setting the current branch to track the upstream branch.
-  publish = !"git push --set-upstream origin $(git branch-name)"
+  publish = !"git push --set-upstream origin $(git rev-parse --abbrev-ref HEAD)"
 
   ### reset & undo ###
 
