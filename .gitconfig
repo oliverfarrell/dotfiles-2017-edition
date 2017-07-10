@@ -98,7 +98,13 @@
   # rbi - rebase interactive on our unpushed commits.
   rbi = rebase --interactive @{upstream}
 
-  ### Reset & Undo ###
+  ### push ###
+
+  # Publish the current branch by pushing it to the remote "origin",
+  # and setting the current branch to track the upstream branch.
+  publish = !"git push --set-upstream origin $(git branch-name)"
+
+  ### reset & undo ###
 
   # Reset and undo aliases are ways to move backwards on the commit chain.
   reset-commit       = reset --soft HEAD~1
