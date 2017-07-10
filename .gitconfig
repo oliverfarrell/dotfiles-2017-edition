@@ -25,22 +25,87 @@
   date = rfc
 
 [alias]
-  a   = add
-  aa  = add -A
+  a = add
+  b = branch
+  c = commit
+  d = diff
+  f = fetch
+  g = grep
+  l = log
+  m = merge
+  o = checkout
+  p = pull
+  r = remote
+  s = status
+  w = whatchanged
 
-  c  = commit
+  ### add ###
+
+  # add - add all
+  aa = add --all
+
+  ### branch ###
+
+  # branch - delete a branch
+  bd = branch --delete
+
+  ### commit ###
+
+  # commit - amend the tip of the current branch rather than creating a new commit
   ca = commit --amend
 
-  s   = status
-  d   = diff
+  # commit with a message
+  cm = commit --message
 
-  co  = checkout
+  ### checkout ###
 
-  # Undo the last commit and discard the staging area
-  discard = reset --hard HEAD
+  # checkout - update the working tree to match a branch or paths. [same as "o" for "out"]
+  co = checkout
 
-  # Undo the last commit, but preserve the staging area
-  undo = reset --soft HEAD^
+  ### log ###
+
+  # log with a text-based graphical representation of the commit history.
+  lg = log --graph
+
+  # log with one line per item.
+  lo = log --oneline
+
+  # log with patch generation.
+  lp = log --patch
+
+  # log with items appearing in topological order, i.e. descendant commits are shown before their parents.
+  lt = log --topo-order
+
+  # log key - our favorite way to show our key performance indicators, i.e. our most useful summary.
+  lk = log --graph --topo-order --abbrev-commit --date=short --decorate --all --boundary --pretty=format:'%Cgreen%ad %Cred%h%Creset -%C(yellow)%d%Creset %s %Cblue[%cn]%Creset %Cblue%G?%Creset'
+
+  ### merge ###
+
+  # merge but without autocommit, and with a commit even if the merge resolved as a fast-forward.
+  me = merge --no-commit --no-ff
+
+  ### rebase ###
+
+  # rebase - forward-port local commits to the updated upstream head.
+  rb = rebase
+
+  # rebase - continue the rebasing process after resolving a conflict manually and updating the index with the resolution.
+  rbc = rebase --continue
+
+  # rebase - restart the rebasing process by skipping the current patch.
+  rbs = rebase --skip
+
+  # rbi - rebase interactive on our unpushed commits.
+  rbi = rebase --interactive @{upstream}
+
+  ### Reset & Undo ###
+
+  # Reset and undo aliases are ways to move backwards on the commit chain.
+  reset-commit       = reset --soft HEAD~1
+  reset-commit-hard  = reset --hard HEAD~1
+  reset-commit-clean = !git reset --hard HEAD~1 && git clean -fd
+  reset-to-pristine   = !git reset --hard && git clean -ffdx
+  reset-to-upstream  = !git reset --hard $(git upstream-name)
 
 [core]
   editor = vim
