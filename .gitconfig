@@ -102,7 +102,15 @@
 
   # Publish the current branch by pushing it to the remote "origin",
   # and setting the current branch to track the upstream branch.
-  publish = !"git push --set-upstream origin $(git rev-parse --abbrev-ref HEAD)"
+  publish = !"git push --set-upstream origin $(git branch-name)"
+
+  # Unpublish the current branch by deleting the
+  # remote version of the current branch.
+  unpublish = !"git push origin :$(git branch-name)"
+
+  # Do a push/pull for just one branch
+  up = "!git push origin $(git branch-name)"
+  down = "!git pull origin $(git branch-name)"
 
   ### reset & undo ###
 
@@ -112,6 +120,14 @@
   reset-commit-clean = !git reset --hard HEAD~1 && git clean -fd
   reset-to-pristine   = !git reset --hard && git clean -ffdx
   reset-to-upstream  = !git reset --hard $(git upstream-name)
+
+  ### SHELL SCRIPTING ALIASES ###
+
+  # Get the current branch name
+  branch-name = rev-parse --abbrev-ref HEAD
+
+  # Get name of the upstream branch
+  upstream-name = !git for-each-ref --format='%(upstream:short)' $(git symbolic-ref -q HEAD)
 
 [core]
   editor = vim
