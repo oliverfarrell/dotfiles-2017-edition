@@ -1,12 +1,12 @@
 #!/usr/bin/env bash
 
 # Create a new directory and enter it
-function mkd() {
+mkd() {
   mkdir -p "$@" && cd "$_";
 }
 
 # Determine size of a file or total size of a directory
-function fs() {
+fs() {
   if du -b /dev/null > /dev/null 2>&1; then
     local arg=-sbh;
   else
@@ -20,7 +20,7 @@ function fs() {
 }
 
 # `a` with no arguments opens the current directory in Atom, otherwise opens the given location
-function a() {
+a() {
   if [ $# -eq 0 ]; then
     atom .;
   else
@@ -29,7 +29,7 @@ function a() {
 }
 
 # `o` with no arguments opens the current directory, otherwise opens the given location
-function o() {
+o() {
   if [ $# -eq 0 ]; then
     open .;
   else
