@@ -1,3 +1,5 @@
+execute pathogen#infect()
+
 " Sets how many lines of history VIM has to remember
 set history=500
 
@@ -85,3 +87,9 @@ set wrap "Wrap lines
 
 " Always show the status line
 set laststatus=2
+
+" Enables syntax highlighting for JSDocs
+let g:javascript_plugin_jsdoc = 1
+
+" Enable JSX syntax highlighting for .js files
+let g:jsx_ext_required = 0
