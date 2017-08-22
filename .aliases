@@ -5,7 +5,7 @@ alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
 alias localip="ipconfig getifaddr en0"
 
 # ssh keys
-alias publickey="more ~/.ssh/id_rsa.pub | pbcopy | printf 'Public key copied to pasteboard.\n'"
+alias publickey="more ~/.ssh/id_rsa.pub | pbcopy | printf 'Public key copied to clipboard.\n'"
 
 # utils
 alias reload=". ~/.zshrc"
