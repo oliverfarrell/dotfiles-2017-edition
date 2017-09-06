@@ -2,6 +2,7 @@
 
 function setup() {
   rsync --exclude ".git/" \
+    --exclude ".macos" \
     --exclude ".DS_Store" \
     --exclude "bootstrap.sh" \
     -avh --no-perms . ~;
